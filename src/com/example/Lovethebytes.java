@@ -25,6 +25,12 @@ public class Lovethebytes {
         sourcePort |= ((bytes[5]&0xff) & 0b111110000);
         System.out.println("Source Port: " + sourcePort);
 
+        //destination
+        int destPort = 0;
+        destPort |= ((bytes[5]&0xff) & 0b000001111) << 12;
+        destPort |= ((bytes[6]&0xff)) << 2;
+        destPort |= ((bytes[7]&0xff));
+        System.out.println("dest Port: " + destPort);
 
 
     }
