@@ -16,14 +16,16 @@ public class Lovethebytes {
 
         };
         //Source port : 0x79, (byte) 0x88 bytes[4-5]
-        int soucePort1 = bytes[4]&0xff;
-        //bytes[5] --> 00000 0000 mask ist 5 bites
-        // the mask is --> 11111 0000
-        int sourcePort2 = ((bytes[5]&0xff) & 0b111110000);
+//        int soucePort1 = bytes[4]&0xff;
+//        //bytes[5] --> 00000 0000 mask ist 5 bites
+//        // the mask is --> 11111 0000
+//        int sourcePort2 = ((bytes[5]&0xff) & 0b111110000);
         int sourcePort = 0;
         sourcePort |= ((bytes[4]&0xff)) << 9;
         sourcePort |= ((bytes[5]&0xff) & 0b111110000);
         System.out.println("Source Port: " + sourcePort);
+
+
 
     }
 
